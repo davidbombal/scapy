@@ -23,5 +23,5 @@ dhcp_discover = Ether(dst='ff:ff:ff:ff:ff:ff',src=RandMAC())  \
 sendp(dhcp_discover,iface='eth0',loop=1,verbose=1)
 
 #Credits:
-# https://scapy.readthedocs.io/_/downloads/en/latest/pdf/
-# https://www.programcreek.com/
+#https://scapy.readthedocs.io/_/downloads/en/latest/pdf/
+#https://www.programcreek.com/
