@@ -22,3 +22,6 @@ dhcp_discover = Ether(dst='ff:ff:ff:ff:ff:ff',src=RandMAC())  \
 #Send packet out of eth0 and loop the packet
 sendp(dhcp_discover,iface='eth0',loop=1,verbose=1)
 
+#Credits:
+# https://scapy.readthedocs.io/_/downloads/en/latest/pdf/
+# https://www.programcreek.com/
