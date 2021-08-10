@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #DHCP Starvation:
 #Import Scapy
 from scapy.all import *
