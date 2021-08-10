@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #Import scapy
 from scapy.all import *
 
