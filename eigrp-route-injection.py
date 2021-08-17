@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #HACK EIGRP - inject fake routes
 #Import time so we can set a sleep timer
 import time
